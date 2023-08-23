@@ -9,7 +9,8 @@ const Scene = () => {
             { /* <CameraControl /> */ }
             { /* <OrbitControl /> */ }
             { /* <PresentationControl /> */ }
-            <TransformControl />
+            { /* <TransformControl /> */ }
+            <PivotControl />
         </>
     );
 };
