@@ -2,6 +2,7 @@ import {CameraControls, Grid} from "@react-three/drei";
 import {useRef} from "react";
 import * as THREE from "three/src/math/MathUtils";
 import {button, buttonGroup, useControls} from "leva";
+import {Canvas} from "@react-three/fiber";
 
 const CameraControl = () => {
     const cameraControlRef = useRef();
@@ -47,23 +48,25 @@ const CameraControl = () => {
 
     return (
         <>
-            <CameraControls ref={cameraControlRef} smoothTime={0.25} />
+            <Canvas camera={{ position: [0, 2, 5], fov: 75 }}>
+                <CameraControls ref={cameraControlRef} smoothTime={0.25} />
 
-            <Grid
-                args={[30, 30]}
-                cellSize={0.25}
-                cellColor="#6f6f6f"
-                sectionSize={1}
-                sectionThickness={1.5}
-                sectionColor="#6364A6"
-                fadeDistance={20}
-                fadeStrength={0.75}
-            />
+                <Grid
+                    args={[30, 30]}
+                    cellSize={0.25}
+                    cellColor="#6f6f6f"
+                    sectionSize={1}
+                    sectionThickness={1.5}
+                    sectionColor="#6364A6"
+                    fadeDistance={20}
+                    fadeStrength={0.75}
+                />
 
-            <mesh>
-                <boxGeometry/>
-                <meshBasicMaterial color="#B900F7"/>
-            </mesh>
+                <mesh>
+                    <boxGeometry/>
+                    <meshBasicMaterial color="#B900F7"/>
+                </mesh>
+            </Canvas>
         </>
     );
 };

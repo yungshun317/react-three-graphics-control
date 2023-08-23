@@ -6,8 +6,9 @@ import Scene from "./Scene";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <>
-        <Canvas camera={{ position: [0, 2, 5], fov: 75 }}>
+        { /* <Canvas camera={{ position: [0, 2, 5], fov: 75 }}>
             <Scene />
-        </Canvas>
+        </Canvas> */ }
+        <Scene />
     </>
 );
