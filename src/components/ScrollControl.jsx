@@ -22,7 +22,7 @@ const ScrollControl = () => {
                         <primitive
                             object={model.scene}
                             position={[1.5, -1, 0]}
-                            scale={1}
+                            scale={0.5}
                         />
                     </Scroll>
 
