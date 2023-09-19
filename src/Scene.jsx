@@ -1,6 +1,7 @@
 import CameraControl from "./components/CameraControl";
 import OrbitControl from "./components/OrbitControl";
 import PresentationControl from "./components/PresentationControl";
+import ScrollControl from "./components/ScrollControl";
 import TransformControl from "./components/TransformControl";
 import PivotControl from "./components/PivotControl";
 import {BrowserRouter, Navigate, Route, Routes, Link, NavLink} from "react-router-dom";
@@ -18,6 +19,7 @@ const Scene = () => {
                 <Route path="camera" element={<CameraControl />} />
                 <Route path="orbit" element={<OrbitControl />} />
                 <Route path="presentation" element={<PresentationControl />} />
+                <Route path="scroll" element={<ScrollControl />} />
                 <Route path="transform" element={<TransformControl />} />
                 <Route path="pivot" element={<PivotControl />} />
                 <Route path="*" element={<Homepage />} />
@@ -32,6 +34,7 @@ const Homepage = () => {
             <NavLink to="camera">CameraControls</NavLink>
             <NavLink to="/orbit">OrbitControls</NavLink>
             <NavLink to="/presentation">PresentationControls</NavLink>
+            <NavLink to="/scroll">ScrollControls</NavLink>
             <NavLink to="/transform">TransformControls</NavLink>
             <NavLink to="/pivot">PivotControls</NavLink>
         </div>

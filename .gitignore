@@ -29,4 +29,5 @@ yarn-error.log*
 # exclude
 /static/textures
 /static/models
+/static/images
 /static/env-maps
