@@ -7,6 +7,18 @@ const Images = () => {
     const scroll = useScroll();
     const groupRef = useRef();
 
+    useFrame(() => {
+        groupRef.current.children[0].material.zoom = 1 + scroll.range(0, 1 / 3) / 3;
+        groupRef.current.children[1].material.zoom = 1 + scroll.range(1 / 3, 1 / 3);
+        groupRef.current.children[2].material.zoom = 1 + scroll.range(1 / 3, 1 / 3);
+        groupRef.current.children[3].material.zoom = 1 + scroll.range(1 / 3, 1 / 3);
+        groupRef.current.children[4].material.zoom = 1 + scroll.range(2 / 3, 1 / 3) / 3;
+        groupRef.current.children[4].material.grayscale = 1 - scroll.range(2 / 3, 1 / 3);
+        groupRef.current.children[5].material.zoom = 2 - scroll.range(2 / 3, 1 / 3);
+
+        console.log(scroll.range(0, 0.33));
+    });
+
     return (
         <group ref={groupRef}>
             <Image
