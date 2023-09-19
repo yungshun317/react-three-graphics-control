@@ -1,9 +1,15 @@
 import {Scroll, ScrollControls, useGLTF} from "@react-three/drei";
 import {Canvas} from "@react-three/fiber";
 import Images from "./Images";
+import {useEffect} from "react";
 
 const ScrollControl = () => {
     const model = useGLTF("./static/models/model.gltf");
+
+    useEffect(() => {
+        document.body.className = "body__scroll-control";
+        return () => document.body.classList.remove("body__scroll-control");
+    }, []);
 
     return (
         <>
